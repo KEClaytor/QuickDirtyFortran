@@ -1,6 +1,8 @@
 ! Formatting output
 program format
+
     implicit none
+
     integer     :: i = 42
     real        :: p = 3.1415926 , e = 2.7182818284
     double precision    :: d = 4.5123434251345

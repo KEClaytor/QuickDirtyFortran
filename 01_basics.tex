@@ -1,19 +1,21 @@
 
-
 \section{Basics}
 
-Each of these examples demonstrates a typical concept, and may be compiled and run.
-
 \subsection{Basic Syntax}
-Prior to Fortran 90, the first 6 columns of a file were resererved for comments, labels, and continuation markers (only 72 characters per line was allowed). With F90, it is now a free-format language, and you don't have to indent every line by 6 spaces.
+Prior to Fortran 90, the first 6 columns of a file were resererved for comments, labels, and continuation markers (only 72 characters per line was allowed).
+ With F90, it is now a free-format language, and you don't have to indent every line by 6 spaces.
+ For fixed format (6-reserved-columns) files, you may characters after the first 72 are ignored (unless the compiler is told otherwise).
+ Similarly, for free-format files characters after the first 132 are ignored (unless the compiler is told otherwise).
+ An \texttt{{\&}} will continue to the next line.
 
-Fortran is case-insensitive, so commands can be written in upper, lower or mixed case. Lower case is preferred. Make note, this means that ``X'' and ``x'' are the same variable. 
+Fortran is case-insensitive, so commands can be written in upper, lower or mixed case. Lower case is preferred. Make note, this means that ``X'' and ``x'' are the same variable.
 
 Every program begins with the command \texttt{program} and ends with \texttt{end program}. You can give these labels, so that an example program might read:
 \begin{quote}
 \verbatiminput{01_BasicsCode/p01_program.f08}
 \end{quote}
-Note: \texttt{!} indicates a comment.
+Note: \texttt{!} indicates a comment. They may follow commands
+
 
 \subsection{Compiling}
 I'll use gfortran to compile. It will try to compile to the appropriate standard using the extension; .f, .f77, .f90, .f95, .f03, .f08. You can force compilation to a standard with the flag ``-std=f2003'' for example.
@@ -34,16 +36,18 @@ gfortran p01_program.f08 -o first.out
 \end{verbatim}
 \end{quote}
 
+
 \subsection{Variables}
 Fortran allows for implicit variable types, based on the first character of the variable name. They are the \texttt{real} type if they start with A-H or O-Z, and the \texttt{integer} type if they start with I-N.
 
 It is generally \emph{not recommended} to do this and to declare the variable type instead. To force this include \texttt{implicit none} at the beginning of your code.
 
 You can declare specific variables to be static (unchangable) with the \texttt{parameter} flag.
+
+Arrays may be multi-dimensional with the dimension specified by the number of indicies (each index specifies the length of that dimension).
 \begin{quote}
 \verbatiminput{01_BasicsCode/p02_variables.f08}
 \end{quote}
-
 
 
 \subsection{Input and Output}
@@ -64,6 +68,11 @@ Reading and writing from a file:
 \begin{quote}
 \verbatiminput{01_BasicsCode/p05_fileio.f08}
 \end{quote}
+The file is:
+\begin{quote}
+\verbatiminput{01_BasicsCode/p05_data.txt}
+\end{quote}
+
 \subsection{Code Control}
 
 \subsection{Compiling}

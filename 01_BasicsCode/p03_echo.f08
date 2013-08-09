@@ -1,6 +1,8 @@
 ! Reading/writing from/to the screen
 program echo
+
     implicit none
+
     integer     :: i
     real        :: r, q
 
