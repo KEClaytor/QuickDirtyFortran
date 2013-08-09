@@ -1,6 +1,7 @@
 
 \section{Basics}
 
+
 \subsection{Basic Syntax}
 Prior to Fortran 90, the first 6 columns of a file were resererved for comments, labels, and continuation markers (only 72 characters per line was allowed).
  With F90, it is now a free-format language, and you don't have to indent every line by 6 spaces.
@@ -14,7 +15,7 @@ Every program begins with the command \texttt{program} and ends with \texttt{end
 \begin{quote}
 \verbatiminput{01_BasicsCode/p01_program.f08}
 \end{quote}
-Note: \texttt{!} indicates a comment. They may follow commands
+\noindent Note: \texttt{!} indicates a comment. They may follow commands
 
 
 \subsection{Compiling}
@@ -28,7 +29,7 @@ gfortran p01_program.f08
 \end{verbatim}
 \end{quote}
 
-The usual gcc flags work (changing the name of the output file):
+\noindent The usual gcc flags work (changing the name of the output file):
 \begin{quote}
 \begin{verbatim}
 gfortran p01_program.f08 -o first.out
@@ -45,6 +46,8 @@ It is generally \emph{not recommended} to do this and to declare the variable ty
 You can declare specific variables to be static (unchangable) with the \texttt{parameter} flag.
 
 Arrays may be multi-dimensional with the dimension specified by the number of indicies (each index specifies the length of that dimension).
+
+You can fill an array at once with the \texttt{(/.../)} syntax.
 \begin{quote}
 \verbatiminput{01_BasicsCode/p02_variables.f08}
 \end{quote}
@@ -55,27 +58,24 @@ Reading and writing from the screen:
 \begin{quote}
 \verbatiminput{01_BasicsCode/p03_echo.f08}
 \end{quote}
-You will get an error if you try to input a value other than what is expected (eg. real input when integer is expected)
-
+\noindent You will get an error if you try to input a value other than what is expected (eg. real input when integer is expected)
 
 Formated writes
 \begin{quote}
 \verbatiminput{01_BasicsCode/p04_format.f08}
 \end{quote}
 
-
-Reading and writing from a file:
+\noindent Reading and writing from a file:
 \begin{quote}
 \verbatiminput{01_BasicsCode/p05_fileio.f08}
 \end{quote}
-The file is:
+\noindent The file is:
 \begin{quote}
 \verbatiminput{01_BasicsCode/p05_data.txt}
 \end{quote}
 
 \subsection{Code Control}
-
-\subsection{Compiling}
-
-
-
+Formated writes
+\begin{quote}
+\verbatiminput{01_BasicsCode/p04_format.f08}
+\end{quote}
