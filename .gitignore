@@ -1,0 +1,15 @@
+# Ignore built code files
+*.out
+
+# Ignore temporary backup files
+*.*~
+*.*.backup
+
+# Ignore all the crap when we make the pdf
+*.aux
+*.dvi
+*.log
+*.pdf
+*.ps
+*.toc
+
